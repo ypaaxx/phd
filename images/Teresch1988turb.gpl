@@ -1,0 +1,31 @@
+reset
+set encoding utf8
+set decimalsign ','
+set border lw 5
+set terminal epslatex font ",14" size 12cm,9cm
+set key bmargin vertical 
+#set nokey
+set grid
+set style line 1 lt 2 lw 5 dt 1 lc rgb 'blue' 
+set style line 2 lt 2 lw 5 dt 1 lc rgb 'red' 
+set style line 3 lt 2 lw 5 dt 2 lc rgb 'blue' 
+set style line 4 lt 2 lw 5 dt 2 lc rgb 'red' 
+set style line 5 lt 2 lw 5 pt 3 ps 0.5 dt 3 lc rgb 'black' 
+set style line 6 lt 2 lw 5 pt 3 ps 0.5 dt 3 lc rgb 'black' 
+
+set output 'teresch1988turb.tex'
+set xlabel '$\bar{G}$'
+set ylabel '$\bar{\pi}_\text{ст}$'
+
+set ytics 0.1
+
+plot 'tereshenko1988turb.txt' index 0 using 1:2  with line title 'гладкие лопатки' ls 1 smooth csplines,\
+'tereshenko1988turb.txt'  i 1 using 1:2  with line notitle   ls 1 smooth csplines,\
+'tereshenko1988turb.txt'  i 2 using 1:2  with line notitle  ls 1 smooth csplines,\
+'tereshenko1988turb.txt' i 3 using 1:2  with line title 'лопатки с турбулизаторами'  ls 2 smooth csplines, \
+'tereshenko1988turb.txt'  i 4 using 1:2  with line notitle  ls 2 smooth csplines,\
+'tereshenko1988turb.txt' i 5 using 1:2  with line notitle  ls 2 smooth csplines
+
+set terminal windows
+replot
+

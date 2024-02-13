@@ -1,0 +1,28 @@
+reset
+set encoding utf8
+set decimalsign ','
+set border lw 5
+set terminal epslatex font ",14" size 12cm,9cm
+set key center bmargin horizontal enhanced
+set nokey
+set grid
+set style line 1 lt 2 lw 5  dt 1 lc rgb 'black' 
+set style line 2 lt 2 lw 5  dt 1 lc rgb 'black' 
+set style line 3 lt 2 lw 5  dt 4 lc rgb 'black' 
+set style line 4 lt 2 lw 5  dt 3 lc rgb 'black' 
+ 
+set output 'Mitrof1991.tex'
+set xlabel '$\tan \beta_1$'
+set ylabel '$\bar{d}\ca/\Ht$'
+set ytics 0.2
+plot 'Mitrof1991.txt' index 0 using 1:($2*2) with line title '1' ls 1 smooth csplines,\
+'Mitrof1991.txt' i 1 using 1:($2*2) with line title '2' ls 1 smooth csplines,\
+'Mitrof1991.txt' i 2 using 1:($2*2) with line title 'сопротивление сети' ls 3 ,\
+'Mitrof1991.txt' i 3 using 1:($2*2) with line title 'сопротивление сети' ls 4 ,\
+'Mitrof1991.txt' i 4 using 1:($2*2) with line title 'сопротивление сети' ls 4 ,\
+'Mitrof1991.txt' i 5 using 1:($2*2) with line title 'сопротивление сети' ls 4 ,\
+'Mitrof1991.txt' i 6 using 1:($2*2) with line title 'сопротивление сети' ls 4 
+
+set terminal windows
+replot
+

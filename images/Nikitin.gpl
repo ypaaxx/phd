@@ -1,0 +1,45 @@
+#! /usr/bin/gnuplot -persist
+reset
+set encoding utf8
+set decimalsign ','
+set border lw 5
+set terminal epslatex font ",14" size 16cm,5cm
+
+#set key title '$\bar{H}_\text{т}$' 
+set key center bmargin
+set key horizontal
+
+set grid
+set style line 1 lt 2 lw 4 pt 3 ps 0.5 dt 1 lc rgb 'red' 
+set style line 2 lt 2 lw 4 pt 3 ps 0.5 dt 1 lc rgb 'blue' 
+set style line 3 lt 2 lw 4 pt 3 ps 0.5 dt 1 lc rgb 'dark-green' 
+set style line 4 lt 2 lw 4 pt 3 ps 0.5 dt 1 lc rgb 'magenta' 
+
+set xrange [0:1]
+
+set ytics (0.6, 1, 1.5)
+set yrange [0.6:1.5]
+#set ytics 0.02
+
+set ylabel '$\bar{w}$'
+
+set title '$ i = -5\si\degree $'
+set output 'nikitin1.tex'
+
+plot  'nikitin5.txt' i 0 u 1:2 w lines ls 1 notitle  smooth csplines,\
+'nikitin5.txt' i 1 u 1:2 with points pt 8 ps 2 lc 'black' notitle
+
+set output 'nikitin2.tex'
+set title '$ i = 3\si\degree $'
+plot  'nikitin3.txt' i 0 u 1:2 w lines ls 1 notitle smooth csplines,\
+'nikitin3.txt' i 1 u 1:2 with points pt 8 ps 2 lc 'black' notitle
+
+set terminal epslatex font ",14" size 16cm,7cm
+set xlabel '$\bar{x}$'
+set output 'nikitin3.tex'
+set title '$ i = 7,8\si\degree $'
+plot  'nikitin7.8.txt' i 0 u 1:2 w lines ls 1 title 'плоская решётка' smooth csplines,\
+'nikitin7.8.txt' i 1 u 1:2 w p pt 8 ps 2 lc 'black' title 'диагональная решётка'
+
+set terminal windows
+replot 

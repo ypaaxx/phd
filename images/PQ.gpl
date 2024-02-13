@@ -1,0 +1,31 @@
+reset
+set encoding utf8
+set decimalsign ','
+set border lw 5
+set terminal epslatex font ",14" size 12cm,9cm
+set key bmargin vertical
+
+set grid
+set style line 1 lt 1 lw 5  dt 1 lc rgb 'red' 
+set style line 2 lt 1 lw 5  dt 1 lc rgb 'blue' 
+set style line 3 lt 1 lw 5  dt 3 lc rgb 'black' 
+
+set output 'PQ.tex'
+set xrange [0:0.6]
+set yrange [0:0.15]
+set ytics 0.05
+set xlabel '$\bar{c}_a$'
+set ylabel '$\bar{H}$'
+plot 'PQ121.txt' using 1:2 with line title 'вентилятор 1' ls 1 smooth csplines,'PQ23.txt' using 1:2 with line title 'вентилятор 2' ls 2 smooth csplines,'psid.txt' using 1:2 with line title 'сопротивление сети' ls 3 lw 2
+
+set output 'PQ2.tex'
+set xrange [0:10]
+set yrange [0:400]
+set ytics 100
+set xlabel '$Q, \text{м}^3/\text{c}$'
+set ylabel '$P_\nu, \text{Па}$'
+plot 'hca121.txt' using 1:2 with line title 'вентилятор 1' ls 1 smooth csplines,'hca23.txt' using 1:2 with line title 'вентилятор 2' ls 2 smooth csplines,'psid.txt' using ($1/0.0423):($2/1.7007e-04) with line title 'сопротивление сети '  ls 3 lw 2
+
+set terminal windows
+replot
+

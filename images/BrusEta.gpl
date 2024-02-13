@@ -1,0 +1,31 @@
+reset
+set encoding utf8
+set decimalsign ','
+set border lw 5
+set terminal epslatex font ",14" size 12cm,9cm
+
+#set key title '$\bar{H}_\text{т}$' 
+set key center bmargin
+set key horizontal
+
+set grid
+set style line 1 lt 2 lw 4 pt 3 ps 0.5 dt 1 lc rgb 'red' 
+set style line 2 lt 2 lw 4 pt 3 ps 0.5 dt 1 lc rgb 'blue' 
+set style line 3 lt 2 lw 4 pt 3 ps 0.5 dt 1 lc rgb 'dark-green' 
+set style line 4 lt 2 lw 4 pt 3 ps 0.5 dt 1 lc rgb 'magenta' 
+
+set output 'BrusEta.tex'
+#set xrange [0.1:0.5]
+set yrange [0.8:0.9]
+set ytics 0.02
+
+set xlabel '$\bar{c}_a$'
+set ylabel '$\eta$'
+set key title '$\bar{H}_\text{т}$'
+
+plot  'BrusEta.txt' i 3 u 1:2 w lines ls 1 title '0,05' smooth csplines,\
+'BrusEta.txt' i 2 u 1:2 w lines ls 2 title '0,1' smooth csplines,\
+'BrusEta.txt' i 1 u 1:2 w lines ls 3 title '0,2' smooth csplines,\
+'BrusEta.txt' i 0 u 1:2 w lines ls 4 title '0,4' smooth csplines
+set terminal windows
+replot 

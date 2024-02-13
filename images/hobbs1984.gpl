@@ -1,0 +1,28 @@
+reset
+set encoding utf8
+set decimalsign ','
+set border lw 5
+set terminal epslatex font ",14" size 12cm,9cm
+set key bmargin vertical 
+#set nokey
+set grid
+set style line 1 lt 2 lw 5 dt 1 lc rgb 'blue' 
+set style line 2 lt 2 lw 5 dt 1 lc rgb 'red' 
+set style line 3 lt 2 lw 5 dt 2 lc rgb 'blue' 
+set style line 4 lt 2 lw 5 dt 2 lc rgb 'red' 
+set style line 5 lt 2 lw 5 pt 3 ps 0.5 dt 3 lc rgb 'black' 
+set style line 6 lt 2 lw 5 pt 3 ps 0.5 dt 3 lc rgb 'black' 
+
+set output 'Hobbs1984.tex'
+set ylabel '$\zeta$'
+set xlabel '$M_1$'
+
+set ytics 0.01
+
+plot 'Hobbs1984.txt' index 0 using 1:2  with line title 'специальное профилирование' ls 1 smooth csplines,\
+'Hobbs1984.txt'  i 1 using 1:2  with line title 'профили NACA-405' ls 2 smooth csplines,\
+
+
+set terminal windows
+replot
+
