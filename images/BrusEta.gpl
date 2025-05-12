@@ -4,6 +4,7 @@ set decimalsign ','
 set border lw 5
 set terminal epslatex font ",14" size 12cm,9cm
 
+
 #set key title '$\bar{H}_\text{т}$' 
 set key center bmargin
 set key horizontal
