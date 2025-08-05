@@ -9,6 +9,11 @@
 \box0
 }
 
+%
+\newcommand{\const}{ \text{const} }
+\renewcommand{\Re}{ \text{Re} }
+\newcommand{\M}{ \text{M} }
+
 \lstdefinelanguage{Renhanced}%
 {keywords={abbreviate,abline,abs,acos,acosh,action,add1,add,%
         aggregate,alias,Alias,alist,all,anova,any,aov,aperm,append,apply,%
@@ -81,7 +86,9 @@
         unlink,unlist,unname,untrace,update,upper,url,UseMethod,var,%
         variable,vector,Version,vi,warning,warnings,weighted,weights,%
         which,while,window,write,\%x\%,x11,X11,xedit,xemacs,xinch,xor,%
-        xpdrows,xy,xyinch,yinch,zapsmall,zip},%
+        xpdrows,xy,xyinch,yinch,zapsmall,zip,%
+        AVDR, Re, M 
+        },%
     otherkeywords={!,!=,~,$,*,\%,\&,\%/\%,\%*\%,\%\%,<-,<<-},%$
     alsoother={._$},%$
     sensitive,%
