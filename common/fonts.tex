@@ -1,5 +1,6 @@
 %%% Кодировки и шрифты %%%
 \ifxetexorluatex
+	%\usepackage{fontspec}
     % Язык по-умолчанию русский с поддержкой приятных команд пакета babel
     \setmainlanguage[babelshorthands=true]{russian}
     % Дополнительный язык = английский (в американской вариации по-умолчанию)
@@ -17,7 +18,10 @@
         \setmonofont{CMU Typewriter Text}                  % моноширинный шрифт
         \newfontfamily\cyrillicfonttt{CMU Typewriter Text} % моноширинный шрифт для кириллицы
         \defaultfontfeatures{Ligatures=TeX}                % стандартные лигатуры TeX, замены нескольких дефисов на тире и т. п. Настройки моноширинного шрифта должны идти до этой строки, чтобы при врезках кода программ в коде не применялись лигатуры и замены дефисов
-        \setmainfont{CMU Serif}                            % Шрифт с засечками
+        \setmainfont{CMU Serif}
+        %\usepackage{unicode-math}                        % Шрифт с засечками
+        %\setmathfont{Latin Modern Math}
+        %\setmathfont{NewCMMath-Book}
         \newfontfamily\cyrillicfont{CMU Serif}             % Шрифт с засечками для кириллицы
         \setsansfont{CMU Sans Serif}                       % Шрифт без засечек
         \newfontfamily\cyrillicfontsf{CMU Sans Serif}      % Шрифт без засечек для кириллицы

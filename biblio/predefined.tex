@@ -37,10 +37,12 @@
 \newcommand*{\autocite}[1]{} % Чтобы примеры цитирования, рассчитанные на biblatex, не вызывали ошибок при компиляции в bibtex
 
 %%% Создание команд для вывода списка литературы %%%
-\newcommand*{\insertbibliofull}{
+\begin{comment}
+	\newcommand*{\insertbibliofull}{
 \bibliography{biblio/external,biblio/author} % Подключаем BibTeX-базы % После запятых не должно быть лишних пробелов — он "думает", что это тоже имя пути
-\bibliography{biblio/library}
+%\bibliography{biblio/library}
 }
+\end{comment}
 
 \newcommand*{\insertbiblioauthor}{
 \bibliography{biblio/author}     % Подключаем BibTeX-базы % После запятых не должно быть лишних пробелов — он "думает", что это тоже имя пути

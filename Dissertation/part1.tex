@@ -81,8 +81,8 @@
 
 \begin{figure}[htb]
 	\centerfloat{
-		%\input{images/PQ2}
-		\includegraphics{images/ch1/размернаяХарактеристика}
+		%\input{img/PQ2}
+		\includegraphics{img/ch1/размернаяХарактеристика}
 	}
 	\caption{Размерные характеристики сравниваемых вентиляторов.}
 	\label{fig:pq2}
@@ -206,7 +206,7 @@
 	\item{\(R\)} радиус сопла, \(\si\meter\).
 \end{eqexpl}
 
-В турбомашинах так же могут возникать циркуляционные зоны, например, в последних ступенях паровых турбин \autocite{Bammert1949} или в осевых вентиляторах с большой долей статического давления \autocite{Mitrofovich1991}.
+В турбомашинах так же могут возникать циркуляционные зоны \autoref{Knish1974}, например, в последних ступенях паровых турбин \autocite{Bammert1949} или в осевых вентиляторах с большой долей статического давления \autocite{Mitrofovich1991}.
 
 Циркуляционные зоны (рисунок \ref{fig:Mitrof1999}) при таком типе отрыва начинают развитие у выходной кромки втулки и распространяются вверх по потоку, увеличивая свои размеры и интенсивность.
 Зоны отрыва при этом являются нестационарными и вращающимися в направлении закрутки потока \autocite{Mitrofovich1999}.
@@ -219,13 +219,11 @@
 \end{figure}
 
 Для вентилятора спрофилированного по закону постоянной циркуляции (\(c_u r = \text{const}\)), используется критерий обратный \(S\) записанный через безразмерные параметры \(\ca\bar{d}/\Ht\).
-
 По этому критерию можно определить радиус циркуляционной зоны, возникающей при распаде вихря при течении в трубе \autocite{Strscheletzky1955}.
-
 Граница допустимых сочетаний параметров в зависимости от кинематики потока и геометрии проточной части вентилятора на графике \ref{fig:RoMitrof} полученном в работе \autocite{Mitrofovich1991}.
-\begin{figure} [htb]
+\begin{figure} [h!tb]
 	\centerfloat{
-	 %\input{images/Mitrof1991}
+	 %\input{img/Mitrof1991}
 \includegraphics{img/ch1/Mitrofovich1991}
 	 \begin{eqexpl}
 	 	\item{\(\beta_1\)} угол между направлением скорости потока перед решёткой и осью решётки;
@@ -247,13 +245,13 @@
 \begin{comment}
 	\begin{figure} [htb]
 	\centerfloat{
-		\subcaptionbox[teresh]{вдув в пограничный слой}{\includegraphics[width=8cm,keepaspectratio]{images/tereshenko1988a}}
+		\subcaptionbox[teresh]{вдув в пограничный слой}{\includegraphics[width=8cm,keepaspectratio]{img/tereshenko1988a}}
 		\hfill
-		\subcaptionbox{отсос пограничного слоя}{\includegraphics[width=8cm,keepaspectratio]{images/tereshenko1988b}}
+		\subcaptionbox{отсос пограничного слоя}{\includegraphics[width=8cm,keepaspectratio]{img/tereshenko1988b}}
 		\hfill
-		\subcaptionbox{многорядные решётки}{\includegraphics[width=8cm,keepaspectratio]{images/tereshenko1988c}}
+		\subcaptionbox{многорядные решётки}{\includegraphics[width=8cm,keepaspectratio]{img/tereshenko1988c}}
 		\hfill
-		\subcaptionbox{профили с турбулизаторами}{\includegraphics[width=8cm,keepaspectratio]{images/tereshenko1988d}}
+		\subcaptionbox{профили с турбулизаторами}{\includegraphics[width=8cm,keepaspectratio]{img/tereshenko1988d}}
 	}
 	\caption{Схемы управления обтеканием лопаток в решётках \autocite{Tereschenko1988}.}
 	\label{fig:Tereshenko1988}
@@ -277,10 +275,18 @@
 
 \subsection{Специальное профилирование}
 
-Управление пограничным слоем с помощью специального профилирования \autocite{Papailiou1970,Hobbs1984,Meng2023} позволяет снижать профильные потери полного давления.
+Управление пограничным слоем с помощью специального профилирования (рис. \ref{fig:Hobbs}) \autocite{Papailiou1970,Hobbs1984,Meng2023} позволяет снижать профильные потери полного давления.
 При этом подходе обеспечивается предварительно заданное распределение давления на спинке профиля.
 Контроль над местом ламинарно-турбулентного перехода и состоянием пограничного слоя на лопатке снижает аэродинамическую нагруженность решётки.
 Это позволяет выбирать меньшие густоты, чем при использовании обычных серий профилей, тем самым снижаются потери полного давления.
+
+\begin{figure} [htb]
+	\centerfloat{
+		\includegraphics[page=5]{img/ch1/tereshenko1988}
+	}
+	\caption{Cпециальное профилирование \autocite{Hobbs1984}.}
+	\label{fig:Hobbs}
+\end{figure}
 
 Наибольший выйгрыш достигается при числах \(\M\) близким к критическим.
 Специальное профилирование позволяет снизить максимальные местные числа Маха на спинке профиля для предотвращения возникновения локальных скачков уплотнения, повышающих потери давления и провоцирующих отрыв пограничного слоя.
@@ -290,7 +296,7 @@
 Профили первой решётки были специально спрофилированы, вторые выбраны из серии профилей NACA-400. Специальное профилирование позволило получить меньшие потери при умеренных числах \(\M_{w_1}\) до 0,7, и б\'ольшее критическое число Маха, при котором потери начинают резко расти.
 \begin{figure} [htb]
 	\centerfloat{
-		%\input{images/Hobbs1984}
+		%\input{img/Hobbs1984}
 		\includegraphics{img/ch1/Hobbs1984}
 	}
 	\caption{Сопоставление коэффициента потерь \(\zeta\) в решётках с профилями с специальным профилированием и серии NACA-400 при разных числах маха на входе \(\M_{w_1}\) \autocite{Hobbs1984}.}
@@ -329,18 +335,18 @@
 Градиент давления при течении в проточной части можно скомпенсировать, плавно увеличивая скорости потока вдоль течения, за счет уменьшения сечения проточной части от входа к выходу из вентилятора.
 Такие вентиляторы называются вентиляторами с меридиональным ускорением потока.
 Уменьшение сечения проточной части, как правило, обеспечивается плавным увеличением относительного диаметра втулки \(\bar{d}\) (рисунок \ref{fig:schemaMrdnl}).
-Характеристикой течения в проточной части с меридиональным ускорением потока является отношение осевых плотностей тока на входе (1) и выходе (2) из решётки (Axial velocity density ratio) \(\text{AVDR} = \rho_2 c_\text{2a}/\rho_1 c_\text{1a}\).
+Характеристикой течения в проточной части с меридиональным ускорением потока является отношение осевых плотностей тока на входе (1) и выходе (2) из решётки (Axial velocity density ratio) \(AVDR = \rho_2 c_\text{2a}/\rho_1 c_\text{1a}\).
 Для несжимаемого газа, соответственно, коэффициент меридионального ускорения \(m_f = c_\text{2a}/c_\text{1a}\) зависит от изменения площади поперечного сечения проточной части.
 \begin{figure}[htb]
 	\centerfloat{
-		\includegraphics[width=8cm,keepaspectratio]{images/schemaMrdnl}
+		\includegraphics[width=8cm,keepaspectratio]{img/schemaMrdnl}
 	}
 	\caption{Схема вентилятора с меридиональным ускорением потока \autocite{Brusilovskiy2004}.}
 	\label{fig:schemaMrdnl}
 \end{figure}
 
 При отношении компонент осевых скоростей на входе и выходе из решётки больше 1, то есть при ускорении потока, пограничные слои на элементах проточной части вентилятора должны становиться тоньше, отрыв потока должен затягиваться, а потери полного давления снижаться.
-По результатам работы \autocite{SenthilKumaran2015} по исследованию влияния \(\text{AVDR}\) на характеристики компрессорной ступени было установлено, что увеличение \(\text{AVDR}\) способствует росту КПД ступени до некоторого предельного значения, после которого увеличение \(\text{AVDR}\) уже не приводит к заметным изменениям.
+По результатам работы \autocite{SenthilKumaran2015} по исследованию влияния \(AVDR\) на характеристики компрессорной ступени было установлено, что увеличение \(AVDR\) способствует росту КПД ступени до некоторого предельного значения, после которого увеличение \(AVDR\) уже не приводит к заметным изменениям.
 
 Снижение диффузорности течения позволяет получить эффективные вентиляторы в области параметров, выходящей за границы значений параметров типичных для эффективной осевой ступени с цилиндрической проточной частью \autocite{Eck1972}.
 Спроектированный на сравнительно большое значение коэффициента теоретического напора \(\Ht\) равном 0,52 при коэффициенте расхода в сечении за рабочим колесом \(\bar{c}_\text{2a}\) равном 0,55 вентилятор \autocite{Brusilovskiy1962} показал достаточно высокий КПД равный 0,865 и хорошее регулирование поворотом лопаток входного направляющего аппарата.
@@ -400,7 +406,7 @@
  Согласно этой гипотезе течение в проточной части можно разделить коаксиальными поверхностями на элементарные цилиндрические слои течения.
  При этом течения в соседних слоях в первом приближении независимы. Уравнение \ref{eq:H_t_tan} преобразуется к виду:
 \begin{equation}
-	\bar{H}_\text{т} = \bar{c}_\text{a} \left( \tan\alpha_2 - \tan\alpha_1 \right).
+	\bar{H}_\text{т} = \bar{c}_\text{a} \left( \tan\alpha_2 - \tan\alpha_1 \right),
 	\label{eq:H_t_cil}
 \end{equation}
 \begin{eqexpl}
@@ -418,7 +424,7 @@
 Для описания геометрии решёток и профиля используются следующие параметры (рисунок \ref{fig:cascad}):
 \begin{figure} [htb]
 	\centerfloat{
-		\includegraphics{images/cascad}
+		\includegraphics{img/cascad}
 	}
 	\caption{Основные геометрические параметры профиля и решётки профилей.}
 	\label{fig:cascad}
@@ -483,7 +489,7 @@
 Для концевых сечений рекомендуемые густоты и углы атаки отличаются от выбранных по продувкам плоских решёток \autocite{Brusilovskiy1975b}.
 \begin{figure} [htb]
 	\centerfloat{
-		%\input{images/BunSvjat}
+		\includegraphics{img/ch1/BunSv}
 	}
 	\caption{Рекомендуемые значения густоты решётки \(\tau\) в зависимости от угла потока на выходе из решётки \(\beta_2\) и углом поворота потока \(\Delta\beta\).}
 	\label{fig:tauRek}
@@ -497,19 +503,116 @@
 При использовании метода наложения потоков на контуре профиля располагается большое количество особенностей: вихрей, источников или диполей.
 Задача об определении характеристик решётки сводится к решению системы линейных алгебраических уравнений.
 
-Широкое распространение получил метод дискретных вихрей (МДВ) \autocite{Belozerovskiy1978}. Бесконечная решётка профилей обтекается потенциальным невязким несжимаемым потоком.
+\subsection{Метод дискретных вихрей}\label{sec:mdv}
+
+Метод дискретных вихрей \autocite{Belozerovskiy1978} позволяет выполнять математическое моделирование течения невязкого несжимаемого газа.
+
+На комплексной плоскости полученной конформным отображением намечаются контуры лопаток решётки \ref{fig:mdv}.
+На контурах размещаются точки с вихрями и между ними ставятся контрольные точки.
+Вихри, расположенные в соответствующих местах на контурах лопаток решётки, образуют бесконечные цепочки вдоль фронта решётки.
+Одна из точек на задней кромке, содержащая вихрь, выбирается в качестве критической точки \(s_{2}\), в которой интенсивность вихря равна нулю (\(\Gamma_{0} = 0\)), в ней поток сходит с поверхности лопатки.
+\begin{figure}[htb]
+	\centering
+	\subcaptionbox{решётка профилей}{
+		\includegraphics[page=1]{img/syn/mdv}}
+	\subcaptionbox{задняя кромка профиля}{
+		\includegraphics[page=2]{img/syn/mdv}}
+	\subcaptionbox{непротекание в контрольных точках}{
+		\includegraphics[page=3]{img/syn/mdv}}
+	\caption{Контрольные точки и дискретные вихри на контурах профиля в решётке}
+
+	\label{fig:mdv}
+\end{figure}
+
+При разделении контура лопатки контрольными точками следует выдерживать расстояние между соседними точками не больше местной толщины лопатки \autocite{Karadji2013}.
+Для профилей серии С-4 с относительной толщиной профиля \(\bar{c}\) в пределах от 0,6 до 1,2 требуется около 150 контрольных точек.
+
+Условие непротекания потока через контур лопатки в данной постановке выражается требованием ортогональности векторов скорости потока в относительном движении \(\vec{w}\), нормальным к контуру лопатки в контрольных точках \(\vec{n}\).
+Для этого скалярное произведение всех векторов \(\left(\vec{w}, \vec{n}\right)\) должно равняться нулю:
+\begin{equation}
+	\left(\vec{w}, \vec{n}\right) = 0,
+\end{equation}
+или в форме комплексных векторов:
+\begin{equation}
+	\Re(\mathbf{N}^\text{T}) \circ \Re(\mathbf{W}) + \Im(\mathbf{N}^\text{T}) \circ \Im(\mathbf{W}) = 0,
+\end{equation}
+\begin{eqexpl}
+	\item{\(\mathbf{N}\)} столбец нормальных векторов \(\vec{n}\) в контрольных точках;
+	\item{\(\mathbf{W}\)} столбец векторов относительной скорости \(\vec{W}\) в контрольных точках.
+\end{eqexpl}
+
+Задача сводится к решению переопределённой системы линейных алгебраических уравнений (СЛАУ). Неизвестными являются интенсивности вихрей \(\mathbf{\Gamma}\), а свободные члены \(\mathbf{B}\) и коэффициенты СЛАУ \(\mathbf{A}\) формируются из условия непротекания в контрольных точках:
+\begin{equation}
+	\mathbf{A}\mathbf{\Gamma}+\mathbf{B}^\text{T}=0,
+\end{equation}
+\begin{eqexpl}
+	\item{\(\mathbf{A}\)}[=] \(\Re(\mathbf{N}^\text{T}) \circ \Re(\mathbf{V}_{\Gamma}) + \Im(\mathbf{N}^\text{T}) \circ \Im(\mathbf{V}_{\Gamma})\) "--- коэффициенты СЛАУ;
+	\item{\(\mathbf{B}\)}[=] \(\Re(\mathbf{N}^\text{T}) \circ \Re(\mathbf{V}_{\infty}) + \Im(\mathbf{N}^\text{T}) \circ \Im(\mathbf{V}_{\infty})\) "--- свободные члены;
+	\item{\(\mathbf{V}_{\Gamma}\)}[=]\(\overline{\frac{1}{2 i t} \coth \left[ \frac{\pi}{t} (\mathbf{Z}^\text{T}_\text{к.т.}-\mathbf{Z}_{\gamma}) \right]}\) "--- скорость индуцированная цепочками вихрей;
+	\item{\(\mathbf{Z}_{\gamma}\)} вектор столбец координат вихрей;
+	\item{\(\mathbf{Z}_\text{к.т.}\)} вектор столбец координат контрольных точек;
+	\item{\(\mathbf{V}_{\infty}\)} скорость невозмущённого потока (\ref{eq:V_inf});
+\end{eqexpl}
+
+Количество неизвестных меньше числа уравнений, так как интенсивность вихря в точке схода потока \(s_2\) известна \(\mathbf{\Gamma}_{s_2} = 0\).
+Переопределённая СЛАУ не имеет точного решения, среди множества приблизительных решений конечное решение определяется методом наименьших квадратов с помощью QR-разложения \autocite{Horn1990}.
+
+По определённым \(\mathbf{\Gamma}\) и скорости на бесконечности \(v_{\infty}\) можно определить скорости в относительном \(v_e\) движении для любого \(z\):
+\begin{subequations}
+	\begin{gather}
+		v(z) = v_\infty + \overline{\frac{1}{2 i t} \cth \left[ \frac{\pi}{t} (z-\mathbf{Z}_{\gamma}) \right]}, \\
+	\end{gather}
+\end{subequations}
+
+При наличии двух решений \(\Gamma_{1}\) и \(\Gamma_2\) для разных \(v_{\infty 1}\) и \(v_{\infty 2}\), для любого \(v_{\infty}\) можно определить \(\Gamma\) (рис.~\ref{fig:stream_line}) как линейную комбинацию \(\Gamma_{1}\) и \(\Gamma_2\):
+\begin{equation}
+	\Gamma = \lambda_1 \Gamma_1 + \lambda_2	\Gamma_2,
+\end{equation}
+\begin{eqexpl}
+	\item{\(
+		\begin{vmatrix}
+			\lambda_1 \\ \lambda_2
+		\end{vmatrix}
+		\)}[=]\(
+	\begin{vmatrix}
+		v_{\infty 1 x} & v_{\infty 2 x} \\
+		v_{\infty 1 y} & v_{\infty 2 y}
+	\end{vmatrix}
+	\setminus
+	\begin{vmatrix}
+		v_{\infty x} \\ v_{\infty y}
+	\end{vmatrix}
+	\) "--- линейные коэффициенты.
+\end{eqexpl}
+\begin{figure}[htb]
+	\centering
+	\subcaptionbox{\(\Gamma_{1}\)}{
+		\includegraphics[width = 0.3\textwidth, page=1]{img/stream_line}}
+	\subcaptionbox{\(\Gamma_{2}\)}{
+		\includegraphics[width = 0.3\textwidth, page=2]{img/stream_line}}
+	\subcaptionbox{\(\Gamma\)}{
+		\includegraphics[width = 0.3\textwidth, page=3]{img/stream_line}}
+	\caption{Линии тока частных решений и их линейной комбинации}
+	\label{fig:stream_line}
+\end{figure}
+
+Влияние вязкости учитывается параметром потери циркуляции \autocite{Dovjik1968, Brusilovskiy1986} \(k_\Gamma=\Delta \Gamma_\text{вязк}/\Delta \Gamma_\text{невязк}\), где \(\Delta \Gamma_\text{вязк}\) "--- изменение циркуляция при обтекании профилей в решётке вязкой средой, \(\Delta \Gamma_\text{невязк}\) "--- при обтекании невязкой средой. При режимах работы решётки с максимальным КПД \(k_\Gamma\) принимает значения от 1,05 до 1,15.
+
+\begin{comment}
+	Широкое распространение получил метод дискретных вихрей (МДВ) \autocite{Belozerovskiy1978}. Бесконечная решётка профилей обтекается потенциальным невязким несжимаемым потоком.
 На контуре профиля расставляются точки дискретных вихрей и контрольные точки (рисунок \ref{fig:foilVortex}). В контрольных точках принимается, что поток касателен к контуру профиля.
 Необходимо задать критическую точку схода потока с профиля, в которой интенсивность вихря будет нулевой.
 На остальных профилях решётки вихри располагаются точно так же, как и на исходном профиле, образуя бесконечные цепочки вихрей.
 
 \begin{figure} [htb]
 	\centerfloat{
-		\includegraphics[width=8cm,keepaspectratio]{images/foilVortex}
+		\includegraphics[width=8cm,keepaspectratio]{img/foilVortex}
 	}
 	\caption{Вихри \(\times\) и контрольные точки \(\circ\) на контуре профиля.}
 	\label{fig:foilVortex}
 \end{figure}
 
+\end{comment}
 \subsection{Течение в вентиляторе с меридиональным ускорением}\label{sec:ch1/mrdnl}
 
 \subsubsection{Течение в меридиональном сечении}
@@ -518,7 +621,7 @@
 
 \begin{figure} [htb]
 	\centerfloat{
-		\includegraphics[width=8cm,keepaspectratio]{images/s1s2}
+		\includegraphics[width=8cm,keepaspectratio]{img/ch1/s1s2}
 	}
 	\caption{Поверхности тока \(S_1\) и \(S_2\) \autocite{Wu1952}. \(S_2\) выделены красным.}
 	\label{fig:s1s2}
@@ -543,7 +646,7 @@
 
 \begin{figure}[htb]
 	\centering{
-		\includegraphics[]{images/ch1/DovjHt}
+		\includegraphics[]{img/ch1/DovjHt}
 	}
 	\caption{Величины \(\bar{H}_\text{т}\) для рабочих колёс с различным соотношением \(m_{f}=F_{1}/F_{2}\).}
 	\label{DovjHt}
@@ -552,6 +655,16 @@
 \subsubsection{Течение по поверхности от лопатки к лопатке}
 
 В осевых ступенях с умеренным отклонением поверхностей тока \(S_1\) от цилиндричности, не превышающей 15 градусов, используются методы теоретического анализа течения в лопаточных венцах для осевых турбомашин с цилиндрической проточной частью \autocite{Sirotkin1972,Stepanov1962}, влиянием радиальной компоненты скорости при этом пренебрегают.
+
+\begin{gather}
+	\frac{\partial (h \tilde w_x)}{\partial x}+\frac{\partial (h \tilde w_y)}{\partial y} = 0,\\
+	\frac{\partial \tilde w_x}{\partial y}-\frac{\partial \tilde w_y}{\partial x}=2\tilde \omega(x)
+\end{gather}
+
+\begin{eqexpl}
+	\item{\(\tilde w\)} скорость фиктивного газа \(\tilde w = w r\);
+	\item{\(\tilde \omega\)} вихрь фиктивного газа \(\tilde \omega = -r^2 \omega \sin\gamma \);
+\end{eqexpl}
 
 Схема вентилятора с меридиональным ускорением подразумевает значительное увеличение коэффициента расхода в одной ступени и изменение радиуса линий тока в сечениях у втулки. Течение в таком лопаточном венце имеет выраженный трехмерный характер, определяемый значительной величиной радиальной составляющей скорости. Рассматривая невязкое безвихревое течение несжимаемого газа в решётке профилей на поверхностях \(S_1\), с помощью конформного отображения можно перейти к рассмотрению обтекания плоской решётки профилей в слое переменной толщины.
 
@@ -577,12 +690,16 @@ z = \ln W,
 
  \begin{figure} [htb]
  	\centerfloat{
- 		%\includegraphics[width=8cm,keepaspectratio]{images/nikitin1966}
- 		\includegraphics{images/nikitin1}\\
- 		\includegraphics{images/nikitin2}\\
- 		\includegraphics{images/nikitin3}
+ 		%\includegraphics[width=8cm,keepaspectratio]{img/nikitin1966}
+ 		\subcaptionbox{\(i=-5\textdegree\)}{
+ 			\includegraphics[page=1]{img/ch1/nikitin}}
+ 		\subcaptionbox{\(i=2.5\textdegree\)}{
+ 			\includegraphics[page=2]{img/ch1/nikitin}}
+ 		\subcaptionbox{\(i=7.5\textdegree\)}{
+ 			\includegraphics[page=3]{img/ch1/nikitin}}
+ 		\includegraphics[page=4]{img/ch1/nikitin}
  	}
- 	\caption{Сравнение распределений скоростей на спинке лопатки диагональной решётки и плоской \autocite{Nikitin1966}.}
+ 	\caption{Сравнение распределений скоростей на спинке лопатки диагональной решётки и плоской при различных углах атаки \(i\) \autocite{Nikitin1966}.}
  	\label{fig:nikitin}
  \end{figure}
 
@@ -613,7 +730,8 @@ z = \ln W,
 
 \begin{figure} [htb]
 	\centerfloat{
-		\includegraphics{images/ch1/2met-ab}
+		\subcaptionbox{С игнорированием формы проточной части \autocite{Gurevich1974, Komarov1974}}{\includegraphics[page=1]{img/ch1/2met-ab}}
+				\subcaptionbox{Пересчётом из характеристик неподвижной решётки профилей \autocite{Nikitin1966} }{\includegraphics[page=2]{img/ch1/2met-ab}}
 	}
 	\caption{Два подхода к профилированию лопаток рабочего колеса.}
 	\label{fig:2met-ab}
@@ -627,7 +745,7 @@ z = \ln W,
 
 \begin{figure} [htb]
 	\centerfloat{
-		\includegraphics{images/ch1/2met}
+		\includegraphics[page=3]{img/ch1/2met-ab}
 	}
 	\caption{Сравнение распределения \(\Ht\) по высоте проточной части двух рабочих колёс.}
 	\label{fig:2met}
