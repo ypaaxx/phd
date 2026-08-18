@@ -12,40 +12,40 @@
 
 Уравнение неразрывности:
 \begin{equation}
-	\frac{\partial\rho}{\partial t}+\nabla \cdot (\rho \vec{U}) = 0,
+	\frac{\partial\rho}{\partial t}+\nabla \cdot (\rho \vec{V}) = 0,
 \end{equation}
 \begin{eqexpl}
-	\item{\(\vec{U}\)} вектор скорости, \(\vec{U} = \left[Ui; \, Vj; \, Wk\right]\).
+	\item{\(\vec{V}\)} вектор скорости, \(\vec{V} = \left[V_i; \, V_j; \, V_k\right]\).
 \end{eqexpl}
 
 Уравнение сохранения момента:
 \begin{equation}
-	\frac{\partial(\rho\vec{U})}{\partial t}+\nabla\cdot (\rho\vec{U}\otimes\vec{U}) = -\nabla p + \nabla \cdot \tau;
+	\frac{\partial(\rho\vec{V})}{\partial t}+\nabla\cdot (\rho\vec{V}\otimes\vec{V}) = -\nabla p + \nabla \cdot \tau;
 	\label{eq:continum}
 \end{equation}
 \begin{eqexpl}
 	\item{\(\tau\)} тензор напряжений
-	\(\tau = \mu\left(\nabla\vec{U} +(\nabla\vec{U})^{\text{T}} - (2/3)\,\delta\nabla\cdot\vec{U}\right);\)
+	\(\tau = \mu\left(\nabla\vec{V} +(\nabla\vec{V})^{\text{T}} - (2/3)\,\delta\nabla\cdot\vec{V}\right);\)
 	\item{\(\mu\)} динамическая вязкость;
 \end{eqexpl}
 
 Уравнение сохранения полной энергии:
 \begin{equation}
-	\frac{\partial(\rho h_{tot})}{\partial t} - \frac{\partial p}{\partial t}+\nabla \cdot (\rho \vec{U} h_{tot}) = \nabla \cdot (\lambda \nabla T) + \nabla \cdot (\vec{U} \cdot \tau);
+	\frac{\partial(\rho h_{tot})}{\partial t} - \frac{\partial p}{\partial t}+\nabla \cdot (\rho \vec{V} h_{tot}) = \nabla \cdot (\lambda \nabla T) + \nabla \cdot (\vec{V} \cdot \tau);
 	\label{eq:entalpy}
 \end{equation}
 \begin{eqexpl}
-	\item{\(h_{tot}\)} полная энтальпия \(h_{tot} = h + 0,5 \vec{U}^2\);
+	\item{\(h_{tot}\)} полная энтальпия \(h_{tot} = h + 0,5 \vec{V}^2\);
 	\item{\(h\)} энтальпия;
 	\item{\(\lambda\)} теплопроводность.
 \end{eqexpl}
 
 Для описания турбулентных течений мгновенные параметры представляются в виде:
 \begin{equation}
-	U = \overline{U} + u',
+	V = \overline{V} + v',
 \end{equation}
 \begin{eqexpl}
-	\item{\(\overline{U}\)} осреднённая составляющая, \(\overline{U}=\frac{1}{\Delta t} \int_{0}^{\Delta t} U(t)\,dt\);
+	\item{\(\overline{V}\)} осреднённая составляющая, \(\overline{V}=\frac{1}{\Delta t} \int_{0}^{\Delta t} V(t)\,dt\);
 	\item{\(u'\)} пульсационная составляющая.
 \end{eqexpl}
 
@@ -54,23 +54,23 @@
 Уравнение сохранения момента:
 \begin{subequations}
 	\begin{gather}
-		\frac{\partial(\rho U)}{\partial t}+\nabla\cdot(\rho U \vec{U}) = -\frac{\partial p}{\partial x} + \nabla\cdot(\mu \nabla U) + \left[ -\frac{\partial(\rho \overline{u'^{2}})}{\partial x} -\frac{\partial(\rho \overline{u'v'})}{\partial y} -\frac{\partial(\rho \overline{u'w'})}{\partial z}  \right], \\
-		\frac{\partial(\rho V)}{\partial t}+\nabla\cdot(\rho V \vec{U}) = -\frac{\partial p}{\partial y} + \nabla\cdot(\mu \nabla V) + \left[ -\frac{\partial(\rho \overline{u'v'})}{\partial x} -\frac{\partial(\rho\overline{v'^2})}{\partial y} -\frac{\partial(\rho \overline{v'w'})}{\partial z}  \right], \\
-		\frac{\partial(\rho W)}{\partial t}+\nabla\cdot(\rho W \vec{U}) = -\frac{\partial p}{\partial z} + \nabla\cdot(\mu \nabla W) + \left[ -\frac{\partial(\rho \overline{u'w'})}{\partial x} -\frac{\partial(\rho \overline{v'w'})}{\partial y} -\frac{\partial(\rho \overline{w'^2})}{\partial z}  \right],
+		\frac{\partial(\rho V_i)}{\partial t}+\nabla\cdot(\rho V_i \vec{V}) = -\frac{\partial p}{\partial x} + \nabla\cdot(\mu \nabla V) + \left[ -\frac{\partial(\rho \overline{u'^{2}})}{\partial x} -\frac{\partial(\rho \overline{v_i'v_j'})}{\partial y} -\frac{\partial(\rho \overline{v_i'v_k'})}{\partial z}  \right], \\
+		\frac{\partial(\rho V_j)}{\partial t}+\nabla\cdot(\rho V_j \vec{V}) = -\frac{\partial p}{\partial y} + \nabla\cdot(\mu \nabla V_j) + \left[ -\frac{\partial(\rho \overline{v_i'v_j'})}{\partial x} -\frac{\partial(\rho\overline{v'^2})}{\partial y} -\frac{\partial(\rho \overline{v'w'})}{\partial z}  \right], \\
+		\frac{\partial(\rho V_k)}{\partial t}+\nabla\cdot(\rho V_k \vec{V}) = -\frac{\partial p}{\partial z} + \nabla\cdot(\mu \nabla V_k) + \left[ -\frac{\partial(\rho \overline{v_i'v_k'})}{\partial x} -\frac{\partial(\rho \overline{v_j'v_k'})}{\partial y} -\frac{\partial(\rho \overline{v_k'^2})}{\partial z}  \right],
 	\end{gather}
 \end{subequations}
-где \(\rho \overline{u'w'}\) и др. "--- компоненты тензора Рейнольсовых напряжений:
+где \(\rho \overline{v_i'v_k'}\) и др. "--- компоненты тензора Рейнольсовых напряжений:
 \begin{equation}
 	\tau' =-\rho \begin{vmatrix}
-		\overline{u'^2} & \overline{u'v'} & \overline{u'w'}\\
-		\overline{u'v'} & \overline{v'^2} & \overline{v'w'}\\
-		\overline{u'w'} & \overline{v'w'} & \overline{w'^2}
+		\overline{v_i'^2} & \overline{v_i'v_j'} & \overline{v_i'v_k'}\\
+		\overline{v_i'v_j'} & \overline{v_j'^2} & \overline{v_j'v_k'}\\
+		\overline{v_i'v_k'} & \overline{v_j'v_k'} & \overline{v_k'^2}
 	\end{vmatrix}.
 \end{equation}
 
 Уравнение сохранения полной энергии:
 \begin{equation}
-	\frac{\partial(\rho h_{tot})}{\partial t}+\nabla\cdot(\rho h_{tot} \vec{U}) = \nabla\cdot(\Gamma_{h_{tot}}\nabla h_{tot}) + \left[ -\frac{\partial(\rho \overline{u'h'})}{\partial x} -\frac{\partial(\rho \overline{v'h'})}{\partial y} -\frac{\partial(\rho \overline{w'h'})}{\partial z}  \right], \\
+	\frac{\partial(\rho h_{tot})}{\partial t}+\nabla\cdot(\rho h_{tot} \vec{V}) = \nabla\cdot(\Gamma_{h_{tot}}\nabla h_{tot}) + \left[ -\frac{\partial(\rho \overline{v_i'h'})}{\partial x} -\frac{\partial(\rho \overline{v_j'h'})}{\partial y} -\frac{\partial(\rho \overline{v_k'h'})}{\partial z}  \right], \\
 \end{equation}
 \begin{eqexpl}
 	\item{\(\Gamma_{h_{tot}}\)} коэффициент диффузии полной энергии;
@@ -81,22 +81,23 @@
 \subsection{Модель турбулентности}
 
 \(k\) "--- \(\epsilon\) \autocite{}
-связывает турбулентную кинетическую энергию \(k\), м2/с2, и скорость турбулентной диссипации \(\epsilon\), м2/с3.
+связывает турбулентную кинетическую энергию \(k\), \(\si\meter^2/\si\second^2\), и скорость турбулентной диссипации \(\epsilon\), \(\si\meter^2/\si\second^3\).
 \begin{equation}
-	\mu_{eff}=\mu + \mu_{t}
+	\mu_\text{eff}=\mu + \mu_\text{t}
 \end{equation}
-\begin{equation}
-	\mu_{t}= C_{\mu} \rho \frac{k^2}{\epsilon}
-\end{equation}
+\begin{eqexpl}
+	\item{\(\mu_\text{t}\)}[=]\(C_{\mu} \rho \frac{k^2}{\epsilon}\) "--- турбулентная вязкость.
+\end{eqexpl}
+
 
 \begin{subequations}
 	\begin{gather}
-	\frac{\partial(\rho k)}{\partial t} + \frac{\partial}{\partial x_j}\left(\rho U_j k \right) = \frac{\partial}{\partial x_j} \left[ \left(\mu+\frac{\mu_t}{\sigma_k} \right) \frac{\partial k}{\partial x_j} \right] + p_k - \rho\epsilon + p_{kb}, \\
-	\frac{\partial(\rho \epsilon)}{\partial t} + \frac{\partial}{\partial x_j}\left(\rho U_j \epsilon \right) = \frac{\partial}{\partial x_j} \left[ \left(\mu+\frac{\mu_t}{\sigma_\epsilon} \right) \frac{\partial \epsilon}{\partial x_j} \right] + \frac{\epsilon}{k}(C_{\epsilon 1}p_k - C_{\epsilon 2}\rho\epsilon + C_{\epsilon 2}p_{\epsilon b}), 
+	\frac{\partial(\rho k)}{\partial t} + \frac{\partial}{\partial x_j}\left(\rho U_j k \right) = \frac{\partial}{\partial x_j} \left[ \left(\mu+\frac{\mu_\text{t}}{\sigma_k} \right) \frac{\partial k}{\partial x_j} \right] + p_k - \rho\epsilon + p_{kb}, \\
+	\frac{\partial(\rho \epsilon)}{\partial t} + \frac{\partial}{\partial x_j}\left(\rho U_j \epsilon \right) = \frac{\partial}{\partial x_j} \left[ \left(\mu+\frac{\mu_\text{t}}{\sigma_\epsilon} \right) \frac{\partial \epsilon}{\partial x_j} \right] + \frac{\epsilon}{k}(C_{\epsilon 1}p_k - C_{\epsilon 2}\rho\epsilon + C_{\epsilon 2}p_{\epsilon b}), 
 	\end{gather}
 \end{subequations}
 \begin{equation}
-	p_k = \mu_{t} \left( \frac{\partial U_i}{\partial x_j} + \frac{\partial U_j}{\partial x_i} \right)\frac{\partial U_i}{\partial x_j} - \frac{2}{3}\frac{\partial U_k}{\partial x_k}\left(3 \mu_{t} \frac{\partial U_k}{\partial x_k} + \rho k \right),
+	p_k = \mu_\text{t} \left( \frac{\partial U_i}{\partial x_j} + \frac{\partial U_j}{\partial x_i} \right)\frac{\partial U_i}{\partial x_j} - \frac{2}{3}\frac{\partial U_k}{\partial x_k}\left(3 \mu_\text{t} \frac{\partial U_k}{\partial x_k} + \rho k \right),
 \end{equation}
 
 Для описания течения в пограничном слое необходимо использовать пристеночные функции.
@@ -106,7 +107,7 @@
 \(\tau_0\) "--- касательное напряжение на стенке, Па,
 \(\nu\) "--- кинематическая вязкость, \(\text{м}^2\)/с.
 
-Для высокорейнольдсовой \(k\) "--- \(\epsilon\) \(y^+ \approx 70\). 
+%Для высокорейнольдсовой \(k\) "--- \(\epsilon\) \(y^+ \approx 70\). 
 
 Низкорейнольдсовая \(k\) "--- \(\omega\) \autocite{Wilcox1988}
 , где \(\omega=\epsilon / k\), на практике лучше соответствует экспериментальным данным течений с отрывом пограничного слоя и небольшими рециркуляционными зонами. 
@@ -172,7 +173,7 @@
 \end{figure}
 
 Для моделирования ступени РК+СА расчётная область строится из двух межлопаточных венцов \ref{fig:duct}.
-Их взаимодействие моделируется через интерфейс, осредняющий параметры в окружном направлении (mixing plane). 
+Их взаимодействие моделируется через интерфейс, осредняющий параметры в окружном направлении (mixing plane). 
 Такое упрощение соответствует экспериментальным данным \autocite{Martirosyan2019} и позволяет экономить время счёта, сохраняя квазистационарную постановку задачи, так как отсутствуют нестационарные следы от предыдущих венцов.
 На входе в расчётную область рабочего колеса задавалось полное давление газа \(p^{*}\), Па, на выходе из спрямляющего "--- статическое давление \(p\), Па.
 \begin{figure}[htb]

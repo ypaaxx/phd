@@ -1,6 +1,6 @@
 %\setcounter{chapter}{1}
 
-\chapter{Численное исследование влияния меридионального ускорение потока}
+\chapter{Численное исследование влияния меридионального ускорение потока 30--40c.}
 %\chapter{Разработка математической модели течения в вентиляторе с меридиональным ускорением потока}
 
 \begin{comment}
@@ -136,10 +136,10 @@
 
 \subsection{Метод дискретных вихрей}\label{sec:mdv}\label{sec:Trukenbrodt}
 
-Метод дискретных вихрей \autocite{Belozerovskiy1978} позволяет выполнять математическое моделирование течения невязкого несжимаемого газа.
+%Метод дискретных вихрей \autocite{Belozerovskiy1978} позволяет выполнять математическое моделирование течения невязкого несжимаемого газа.
 
 Функции радиуса \(r(a)\) и толщины \(h(a)\) не заданны аналитично, а представляют собой ряды из \(k\) точек.
-Интеграл в (\ref{eq:conformalMapping}) заменяется суммой:
+Интеграл в (\ref{eq:conformalMappingX}) заменяется суммой:
 \begin{equation}
 	x=
 	\begin{cases}
@@ -148,7 +148,7 @@
 		x_k = x_{k-1}.
 	\end{cases}
 \end{equation}
-
+\begin{comment}
 На комплексной плоскости полученной конформным отображением намечаются контуры лопаток решётки \ref{fig:mdv}.
 На контурах размещаются точки с вихрями и между ними ставятся контрольные точки.
 Вихри, расположенные в соответствующих местах на контурах лопаток решётки, образуют бесконечные цепочки вдоль фронта решётки.
@@ -185,26 +185,26 @@
 \end{eqexpl}
 
 Задача сводится к решению переопределённой системы линейных алгебраических уравнений (СЛАУ). Неизвестными являются интенсивности вихрей \(\mathbf{\Gamma}\), а свободные члены \(\mathbf{B}\) и коэффициенты СЛАУ \(\mathbf{A}\) формируются из условия непротекания в контрольных точках:
+\end{comment}
+
+Задача по прежнему сводится к решению переопределённой СЛАУ \ref{eq:SLAU} дополненной изменением скоростей:
 \begin{equation}
 	\mathbf{A}\mathbf{\Gamma}+\mathbf{B}^\text{T}=0,
 \end{equation}
 \begin{eqexpl}
-  \item{\(\mathbf{A}\)}[=] \(\Re(\mathbf{N}^\text{T}) \circ \Re(\mathbf{V}_{\Gamma}) + \Im(\mathbf{N}^\text{T}) \circ \Im(\mathbf{V}_{\Gamma})\) "--- коэффициенты СЛАУ;
-\item{\(\mathbf{B}\)}[=] \(\Re(\mathbf{N}^\text{T}) \circ \Re(\mathbf{V}_{\infty} + i\mathbf{U}) + \Im(\mathbf{N}^\text{T}) \circ \Im(\mathbf{V}_{\infty} + i\mathbf{U})\) "--- свободные члены;
-\item{\(\mathbf{V}_{\Gamma}\)}[=]\(\overline{\frac{1}{2 i t} \coth \left[ \frac{\pi}{t} (\mathbf{Z}^\text{T}_\text{к.т.}-\mathbf{Z}_{\gamma}) \right]}\) "--- скорость индуцированная цепочками вихрей;
-\item{\(\mathbf{Z}_{\gamma}\)} вектор столбец координат вихрей;
-\item{\(\mathbf{Z}_\text{к.т.}\)} вектор столбец координат контрольных точек;
-\item{\(\mathbf{V}_{\infty}\)} скорость невозмущённого потока (\ref{eq:V_inf});
+  %\item{\(\mathbf{A}\)}[=] \(\Re(\mathbf{N}^\text{T}) \circ \Re(\mathbf{V}_{\Gamma}) + \Im(\mathbf{N}^\text{T}) \circ \Im(\mathbf{V}_{\Gamma})\) "--- коэффициенты СЛАУ;
+\item{\(\mathbf{B}\)}[=]\(\Re(\mathbf{N}^\text{T}) \circ \Re(\mathbf{V}_\text{нв} + i\mathbf{U}) + \Im(\mathbf{N}^\text{T}) \circ \Im(\mathbf{V}_\text{нв} + i\mathbf{U})\) "--- свободные члены;
+%\item{\(\mathbf{V}_{\Gamma}\)}[=]\(\overline{\frac{1}{2 i t} \coth \left[ \frac{\pi}{t} (\mathbf{Z}^\text{T}_\text{к.т.}-\mathbf{Z}_{\gamma}) \right]}\) "--- скорость индуцированная цепочками вихрей;
+%\item{\(\mathbf{Z}_{\gamma}\)} вектор столбец координат вихрей;
+%\item{\(\mathbf{Z}_\text{к.т.}\)} вектор столбец координат контрольных точек;
+\item{\(\mathbf{V}_\text{нв}\)} скорость невозмущённого потока (\ref{eq:V_inf});
 \item{\(\mathbf{U}\)} вектор столбец окружных скоростей (\ref{eq:u}).
 \end{eqexpl}
-
-Количество неизвестных меньше числа уравнений, так как интенсивность вихря в точке схода потока \(s_2\) известна \(\mathbf{\Gamma}_{s_2} = 0\).
-Переопределённая СЛАУ не имеет точного решения, среди множества приблизительных решений конечное решение определяется методом наименьших квадратов с помощью QR-разложения \autocite{Horn1990}.
 
 По определённым \(\mathbf{\Gamma}\) и скорости на бесконечности \(v_{\infty}\) можно определить скорости в относительном \(v_e\) и абсолютном \(v\) движениях для любого \(z\):
 \begin{subequations}
 \begin{gather}
-	v(z) = v_\infty + \overline{\frac{1}{2 i t} \cth \left[ \frac{\pi}{t} (z-\mathbf{Z}_{\gamma}) \right]}, \\
+	v(z) = v_\text{нв} + \overline{\frac{1}{2 i t} \cth \left[ \frac{\pi}{t} (z-\mathbf{Z}_{\gamma}) \right]}, \\
 	v_e(z) = v(z)+i u(z).
 \end{gather}
 \end{subequations}
@@ -218,42 +218,9 @@
 \end{subequations}
 \begin{eqexpl}
 	%\item{\(k\)}[=]\(\frac{c_{m0}}{v_{0x}}\frac{r_{0}}{r}\).
-	\item{\(k\)}[=]\({c_{m0} r_{0}}/{v_{0x} r}\).
+	\item{\(k\)}[=]\({c_{m0} r_{0}}/{v_{0x} r}\) "--- коэффициент пересчёта по \ref{eq:c_m}.
 \end{eqexpl}
 
-При наличии двух решений \(\Gamma_{1}\) и \(\Gamma_2\) для разных \(v_{\infty 1}\) и \(v_{\infty 2}\), для любого \(v_{\infty}\) можно определить \(\Gamma\) (рис.~\ref{fig:stream_line}) как линейную комбинацию \(\Gamma_{1}\) и \(\Gamma_2\):
-\begin{equation}
-	\Gamma = \lambda_1 \Gamma_1 + \lambda_2	\Gamma_2,
-\end{equation}
-\begin{eqexpl}
-	\item{\(
-	\begin{vmatrix}
-		\lambda_1 \\ \lambda_2
-	\end{vmatrix}
-	\)}[=]\(
-	\begin{vmatrix}
-		v_{\infty 1 x} & v_{\infty 2 x} \\
-		v_{\infty 1 y} & v_{\infty 2 y}
-	\end{vmatrix}
-	\setminus
-	\begin{vmatrix}
-		v_{\infty x} \\ v_{\infty y}
-	\end{vmatrix}
-	\) "--- линейные коэффициенты.
-\end{eqexpl}
-\begin{figure}[htb]
-	\centering
-	\subcaptionbox{\(\Gamma_{1}\)}{
-		\includegraphics[width = 0.3\textwidth, page=1]{img/stream_line}}
-	\subcaptionbox{\(\Gamma_{2}\)}{
-		\includegraphics[width = 0.3\textwidth, page=2]{img/stream_line}}
-	\subcaptionbox{\(\Gamma\)}{
-		\includegraphics[width = 0.3\textwidth, page=3]{img/stream_line}}
-	\caption{Линии тока частных решений и их линейной комбинации}
-	\label{fig:stream_line}
-\end{figure}
-
-Влияние вязкости учитывается параметром потери циркуляции \autocite{Dovjik1968, Brusilovskiy1986} \(k_\Gamma=\Delta \Gamma_\text{вязк}/\Delta \Gamma_\text{невязк}\), где \(\Delta \Gamma_\text{вязк}\) "--- изменение циркуляция при обтекании профилей в решётке вязкой средой, \(\Delta \Gamma_\text{невязк}\) "--- при обтекании невязкой средой. При режимах работы решётки с максимальным КПД \(k_\Gamma\) принимает значения от 1,05 до 1,15.
 
 \subsection{Профилирование лопаток}
 
