@@ -136,7 +136,7 @@
 	\label{eq:u}
 \end{equation}
 
-\subsection{Метод дискретных вихрей}\label{sec:mdv}
+\subsection{Метод дискретных вихрей}\label{sec:newMDV}
 
 %Метод дискретных вихрей \autocite{Belozerovskiy1978} позволяет выполнять математическое моделирование течения невязкого несжимаемого газа.
 
@@ -203,11 +203,11 @@
 \item{\(\mathbf{U}\)} вектор столбец окружных скоростей (\ref{eq:u}).
 \end{eqexpl}
 
-По определённым \(\mathbf{\Gamma}\) и скорости на бесконечности \(v_{\infty}\) можно определить скорости в относительном \(v_e\) и абсолютном \(v\) движениях для любого \(z\):
+По определённым \(\mathbf{\Gamma}\) и скорости на бесконечности \(v_{\infty}\) можно определить скорости в относительном \(v_\text{отн}\) и абсолютном \(v\) движениях для любого \(z\):
 \begin{subequations}
 \begin{gather}
 	v(z) = v_\text{нв} + \overline{\frac{1}{2 i t} \cth \left[ \frac{\pi}{t} (z-\mathbf{Z}_{\gamma}) \right]}, \\
-	v_e(z) = v(z)+i u(z).
+	v_\text{отн}(z) = v(z)+i u(z).
 \end{gather}
 \end{subequations}
 
@@ -215,7 +215,7 @@
 \begin{subequations}
 \begin{gather}
 	c = v k; \\
-	w = v_e k,
+	w = v_e k, \label{eq:V_rel}
 \end{gather}
 \end{subequations}
 \begin{eqexpl}
