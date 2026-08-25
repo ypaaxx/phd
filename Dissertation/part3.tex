@@ -1,4 +1,4 @@
-\chapter{Экспериментальное исследование характеристик модели вентилятора 30--35c.}\label{ch:ch3}
+\chapter{Экспериментальное исследование характеристик модели вентилятора}\label{ch:ch3}
 
 \begin{comment}
 	\textit{Третья глава содержит экспериментальное обоснование решения задачи, описание методов экспериментальных исследований, оценку точности, анализ сходимости опытных и теоретических результатов.
@@ -55,7 +55,7 @@
 	\caption{Параметры экспериментальной модели}
 	\label{tab:ParamExModel}
 	\begin{tabular}{l|c|c}
-		Диаметр рабочего колеса, мм & \(D_\text{К}\) & 700 \\
+		Диаметр рабочего колеса, м & \(D_\text{К}\) & 0,7\\
 		\hline
 		Относительный диаметр втулки перед РК & \(\bar{d}_1\) & 0,4 \\
 		\hline
@@ -70,6 +70,7 @@
 		Количество лопаток СА & \(Z_\text{СА}\) & 13 
 \end{tabular}
 \end{table}
+
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width = 5cm]{img/modelFront}
@@ -423,21 +424,21 @@
 Значения \(\eta\) совпали с экспериментальными в пределах \(0,5\%\) при \(\varphi\) от 0,4 до 0,7, но при 0,8 показали значительно завышенный результат (на \(2,7\%\)).
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=12cm]{syn/characteristic}
+	\includegraphics[width=10cm]{syn/characteristic}
 	\caption{Сравнение экспериментальных и расчётных характеристик}
 	\label{fig:characteristicCFX}
 \end{figure}
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics{ch3/Погрешности}
+	\includegraphics[scale=1.17]{ch3/Пгрешности}
 	\caption{Разница экспериментальных и расчётных характеристик}
 	\label{fig:errCFX}
 \end{figure}
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics{ch3/c2m}
+	\includegraphics[width=\textwidth]{ch3/c2m}
 	\caption{Сравнение расчётных и экспериментальных параметров потока по высоте проточной части}
 	\label{fig:c2m}
 \end{figure}
