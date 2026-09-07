@@ -1,8 +1,9 @@
 \section{CFD RANS}\label{sec:cfd}
 
-Моделирование течения методом конечных объёмов \autocite{Versteeg1995} предполагает следующие шаги:
+Моделирование течения методом контрольных объёмов \autocite{Versteeg1995} предполагает следующие шаги:
 \begin{enumerate}
-	\item Построение расчётной сетки. Область в которой осуществляется моделирование течения делится на контрольные объёмы.
+	\item Построение расчётной сетки. 
+	Область в которой осуществляется моделирование течения делится на контрольные объёмы.
 	\item Составление системы алгебраических уравнений переноса по всей расчётной области;
 	\item Итеративное решение системы алгебраических уравнений.
 \end{enumerate}
@@ -15,7 +16,7 @@
 	\frac{\partial\rho}{\partial t}+\nabla \cdot (\rho \vec{V}) = 0,
 \end{equation}
 \begin{eqexpl}
-	\item{\(\vec{V}\)} вектор скорости, \(\vec{V} = \left[V_i; \, V_j; \, V_k\right]\).
+	\item{\(\vec{V}\)} вектор скорости, м, \(\vec{V} = \left[V_i; \, V_j; \, V_k\right]\).
 \end{eqexpl}
 
 Уравнение сохранения момента:
@@ -24,9 +25,9 @@
 	\label{eq:continum}
 \end{equation}
 \begin{eqexpl}
-	\item{\(\tau\)} тензор напряжений
+	\item{\(\tau\)} тензор напряжений, Па/м2;
 	\(\tau = \mu\left(\nabla\vec{V} +(\nabla\vec{V})^{\text{T}} - (2/3)\,\delta\nabla\cdot\vec{V}\right);\)
-	\item{\(\mu\)} динамическая вязкость;
+	\item{\(\mu\)} динамическая вязкость, Па\,с.
 \end{eqexpl}
 
 Уравнение сохранения полной энергии:
@@ -35,9 +36,9 @@
 	\label{eq:entalpy}
 \end{equation}
 \begin{eqexpl}
-	\item{\(h_{tot}\)} полная энтальпия \(h_{tot} = h + 0,5 \vec{V}^2\);
-	\item{\(h\)} энтальпия;
-	\item{\(\lambda\)} теплопроводность.
+	\item{\(h_{tot}\)} полная энтальпия, м2/с2, \(h_{tot} = h + 0,5 \vec{V}^2\);
+	\item{\(h\)} энтальпия, м2/с2;
+	\item{\(\lambda\)} теплопроводность, Вт/м2.
 \end{eqexpl}
 
 Для описания турбулентных течений мгновенные параметры представляются в виде:
@@ -59,7 +60,7 @@
 		\frac{\partial(\rho V_k)}{\partial t}+\nabla\cdot(\rho V_k \vec{V}) = -\frac{\partial p}{\partial z} + \nabla\cdot(\mu \nabla V_k) + \left[ -\frac{\partial(\rho \overline{v_i'v_k'})}{\partial x} -\frac{\partial(\rho \overline{v_j'v_k'})}{\partial y} -\frac{\partial(\rho \overline{v_k'^2})}{\partial z}  \right],
 	\end{gather}
 \end{subequations}
-где \(\rho \overline{v_i'v_k'}\) и др. "--- компоненты тензора Рейнольсовых напряжений:
+где \(\rho \overline{v_i'v_k'}\) и др. "--- компоненты тензора Рейнольсовых напряжений, Па:
 \begin{equation}
 	\tau' =-\rho \begin{vmatrix}
 		\overline{v_i'^2} & \overline{v_i'v_j'} & \overline{v_i'v_k'}\\
@@ -73,7 +74,7 @@
 	\frac{\partial(\rho h_{tot})}{\partial t}+\nabla\cdot(\rho h_{tot} \vec{V}) = \nabla\cdot(\Gamma_{h_{tot}}\nabla h_{tot}) + \left[ -\frac{\partial(\rho \overline{v_i'h'})}{\partial x} -\frac{\partial(\rho \overline{v_j'h'})}{\partial y} -\frac{\partial(\rho \overline{v_k'h'})}{\partial z}  \right], \\
 \end{equation}
 \begin{eqexpl}
-	\item{\(\Gamma_{h_{tot}}\)} коэффициент диффузии полной энергии;
+	\item{\(\Gamma_{h_{tot}}\)} коэффициент диффузии полной энергии м2/с;
 \end{eqexpl}
 
 Эта система уравнений незамкнута "--- не определён \(\tau'\). 
@@ -83,13 +84,13 @@
 Замыкание системы уравнений RANS производится с помощью моделей турбулентности.
 Большое распространение получили двух-параметрические модели, такие как \(k\) "--- \(\epsilon\) и \(k\) "--- \(\omega\).
 
-\(k\) "--- \(\epsilon\) \autocite{}
+\(k\) "--- \(\epsilon\) \autocite{Launder1974}
 связывает турбулентную кинетическую энергию \(k\), \(\si\meter^2/\si\second^2\), и скорость турбулентной диссипации \(\epsilon\), \(\si\meter^2/\si\second^3\).
 \begin{equation}
 	\mu_\text{eff}=\mu + \mu_\text{t}
 \end{equation}
 \begin{eqexpl}
-	\item{\(\mu_\text{t}\)}[=]\(C_{\mu} \rho \frac{k^2}{\epsilon}\) "--- турбулентная вязкость.
+	\item{\(\mu_\text{t}\)}[=]\(C_{\mu} \rho \frac{k^2}{\epsilon}\) "--- турбулентная вязкость, Па\,с.
 \end{eqexpl}
 
 \begin{subequations}
