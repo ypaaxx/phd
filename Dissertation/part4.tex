@@ -30,7 +30,7 @@
 	\label{eq:continum}
 \end{equation}
 \begin{eqexpl}
-	\item{\(\tau\)}[=]\(\mu\left(\nabla\vec{V} +(\nabla\vec{V})^{\text{T}} - (2/3)\,\delta\nabla\cdot\vec{V}\right)\) "--- тензор напряжений,~Па/м\textsuperscript{2};
+	\item{\(\tau\)}[=]\(\mu\left(\nabla\vec{V} +(\nabla\vec{V})^{\text{T}} - (2/3)\,\delta\nabla\cdot\vec{V}\right)\) "--- тензор напряжений,~Па;
 	\item{\(\mu\)} динамическая вязкость,~Па$\cdot$с.
 \end{eqexpl}
 
@@ -42,7 +42,7 @@
 \begin{eqexpl}
 	\item{\(h_{tot}\)}[=]\( h + 0,5 \vec{V}^2\) "--- полная энтальпия, м\textsuperscript{2}/с\textsuperscript{2};
 	\item{\(h\)} энтальпия, м\textsuperscript{2}/с\textsuperscript{2};
-	\item{\(\lambda\)} теплопроводность, Вт/м\textsuperscript{2}.
+	\item{\(\lambda\)} теплопроводность, Вт/м\,K.
 \end{eqexpl}
 
 Для описания турбулентных течений мгновенные параметры представляются в виде:
@@ -59,8 +59,8 @@
 Уравнение сохранения количества движения:
 \begin{subequations}
 	\begin{gather}
-		\frac{\partial(\rho V_i)}{\partial t}+\nabla\cdot(\rho V_i \vec{V}) = -\frac{\partial p}{\partial x} + \nabla\cdot(\mu \nabla V) + \left[ -\frac{\partial(\rho \overline{u'^{2}})}{\partial x} -\frac{\partial(\rho \overline{v_i'v_j'})}{\partial y} -\frac{\partial(\rho \overline{v_i'v_k'})}{\partial z}  \right], \\
-		\frac{\partial(\rho V_j)}{\partial t}+\nabla\cdot(\rho V_j \vec{V}) = -\frac{\partial p}{\partial y} + \nabla\cdot(\mu \nabla V_j) + \left[ -\frac{\partial(\rho \overline{v_i'v_j'})}{\partial x} -\frac{\partial(\rho\overline{v'^2})}{\partial y} -\frac{\partial(\rho \overline{v'w'})}{\partial z}  \right], \\
+		\frac{\partial(\rho V_i)}{\partial t}+\nabla\cdot(\rho V_i \vec{V}) = -\frac{\partial p}{\partial x} + \nabla\cdot(\mu \nabla V) + \left[ -\frac{\partial(\rho \overline{v_i'^{2}})}{\partial x} -\frac{\partial(\rho \overline{v_i'v_j'})}{\partial y} -\frac{\partial(\rho \overline{v_i'v_k'})}{\partial z}  \right], \\
+		\frac{\partial(\rho V_j)}{\partial t}+\nabla\cdot(\rho V_j \vec{V}) = -\frac{\partial p}{\partial y} + \nabla\cdot(\mu \nabla V_j) + \left[ -\frac{\partial(\rho \overline{v_i'v_j'})}{\partial x} -\frac{\partial(\rho\overline{v_j'^2})}{\partial y} -\frac{\partial(\rho \overline{v_i'v_k'})}{\partial z}  \right], \\
 		\frac{\partial(\rho V_k)}{\partial t}+\nabla\cdot(\rho V_k \vec{V}) = -\frac{\partial p}{\partial z} + \nabla\cdot(\mu \nabla V_k) + \left[ -\frac{\partial(\rho \overline{v_i'v_k'})}{\partial x} -\frac{\partial(\rho \overline{v_j'v_k'})}{\partial y} -\frac{\partial(\rho \overline{v_k'^2})}{\partial z}  \right],
 	\end{gather}
 \end{subequations}
@@ -146,7 +146,7 @@
 \begin{subequations}
 	\begin{gather}
 	\frac{\partial(\rho k)}{\partial t} + \frac{\partial}{\partial x_j}\left(\rho U_j k \right) = \frac{\partial}{\partial x_j} \left[ \left(\mu+\frac{\mu_\text{t}}{\sigma_k} \right) \frac{\partial k}{\partial x_j} \right] + p_k - \beta_1 \rho k\omega, \\
-	\frac{\partial(\rho \epsilon)}{\partial t} + \frac{\partial}{\partial x_j}\left(\rho U_j \omega \right) = \frac{\partial}{\partial x_j} \left[ \left(\mu+\frac{\mu_\text{t}}{\sigma_\omega} \right) \frac{\partial \omega}{\partial x_j} \right] + \alpha\frac{\omega}{k}p_k - \beta\rho\omega^2,
+	\frac{\partial(\rho \omega)}{\partial t} + \frac{\partial}{\partial x_j}\left(\rho U_j \omega \right) = \frac{\partial}{\partial x_j} \left[ \left(\mu+\frac{\mu_\text{t}}{\sigma_\omega} \right) \frac{\partial \omega}{\partial x_j} \right] + \alpha\frac{\omega}{k}p_k - \beta\rho\omega^2,
 	\end{gather}
 \end{subequations}
 \begin{eqexpl}
@@ -231,7 +231,7 @@
 \end{figure}
 
 В таблице \ref{tab:212} указаны относительная разница рассчитанных и экспериментальных величин
- \(\eta\) и \(\bar{H}_\text{т}\) при различных статических напорах \(\bar{H}_\text{s}=p_3/\rho\), подсчитанная по формуле (прочерк для режимов с переходом на нерабочую ветвь):
+ \(\eta\) и \(\bar{H}_\text{т}\) при различных статических напорах \(\bar{H}_\text{s}=p_3/\rho U_\text{к}^2\), подсчитанная по формуле (прочерк для режимов с переходом на нерабочую ветвь):
 \begin{equation}
 	\bar{\Delta}_\text{RANS} = \frac{x_\text{RANS}-x_\text{эксп}}{x_\text{0}},
 \end{equation}
@@ -538,7 +538,7 @@
 
 \item по \(\delta^{**}(x)\) определяется локальное число Рейнольдса \(\Re_b\):
 \begin{equation}
-	\Re_b = \frac{w}{w_1}\frac{\delta^{**}}{b}\frac{1}{\Re_{w_1}};
+	\Re_b = \frac{w}{w_1}\frac{\delta^{**}}{b}\Re_{w_1};
 \end{equation}
 
 \item вводится новая переменная \(\xi\):
@@ -805,9 +805,9 @@ L = \frac{\xi_1}{\xi}L_1 + \ln \frac{w(\xi)}{w_1} + \frac{1}{\xi} \int_{\xi_1}^{
 \section{Заключение}
 
 На основании модели течения в осевом вентиляторе разработана методика моделирования течения в вентиляторе с меридиональным ускорением потока.
-Определение поверхностей от-лопатки-к-лопатке S\textsubscript{2} проводится анализом формы проточной части S\textsubscript{1}.
+Определение поверхностей от-лопатки-к-лопатке S\textsubscript{1} проводится анализом формы проточной части S\textsubscript{2}.
 Решается уравнение радиального равновесия, результатом чего являются линии тока в меридиональном сечении и меридиональные компоненты скорости вдоль них.
-Моделирование течения по S\textsubscript{2} осуществляется с помощью конформного отображения и метода дискретных вихрей (МДВ).
+Моделирование течения по S\textsubscript{1} осуществляется с помощью конформного отображения и метода дискретных вихрей (МДВ).
 Задача сводится к решению системы линейных алгебраических уравнений с относительно небольшим количеством переменных (примерно 150).
 Полученные решения являются линейно зависимыми, что позволяет, имея два смоделированных режима обтекания решётки, получить любое другое как их суперпозицию не решая заново систему линейных алгебраических уравнений (СЛАУ).
 
