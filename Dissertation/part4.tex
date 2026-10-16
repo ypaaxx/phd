@@ -98,7 +98,7 @@
 
 По гипотезе Буссинеска \autocite{Boussinesq1877} напряжения Рейнольдса пропорциональны средней скорости деформации
 \begin{equation}
-	\tau_{ij}=-\rho \overline{v_i'v_j'} = \mu_\text{t} \left( \frac{\partial U_i}{\partial x_j} + \frac{\partial U_j}{\partial x_i} \right) - \frac{2}{3}\rho k \delta_{ij},
+	\tau_{ij}=-\rho \overline{v_i'v_j'} = \mu_\text{t} \left( \frac{\partial V_i}{\partial x_j} + \frac{\partial V_j}{\partial x_i} \right) - \frac{2}{3}\rho k \delta_{ij},
 \end{equation}
 \begin{eqexpl}
 	\item{\(k\)}[=]\(1/2(\overline{v_i'^2}+\overline{v_j'^2}+\overline{v_k'^2})\) "--- турбулентная кинетическая энергия, \(\si\meter^2/\si\second^2\);
@@ -111,12 +111,12 @@
 
 \begin{subequations}
 	\begin{gather}
-	\frac{\partial(\rho k)}{\partial t} + \frac{\partial}{\partial x_j}\left(\rho U_j k \right) = \frac{\partial}{\partial x_j} \left[ \left(\mu+\frac{\mu_\text{t}}{\sigma_k} \right) \frac{\partial k}{\partial x_j} \right] + P_k - \rho\epsilon, \\
-	\frac{\partial(\rho \epsilon)}{\partial t} + \frac{\partial}{\partial x_j}\left(\rho U_j \epsilon \right) = \frac{\partial}{\partial x_j} \left[ \left(\mu+\frac{\mu_\text{t}}{\sigma_\epsilon} \right) \frac{\partial \epsilon}{\partial x_j} \right] + \frac{\epsilon}{k}(C_{\epsilon 1}P_k - C_{\epsilon 2}\rho\epsilon),
+	\frac{\partial(\rho k)}{\partial t} + \frac{\partial}{\partial x_j}\left(\rho V_j k \right) = \frac{\partial}{\partial x_j} \left[ \left(\mu+\frac{\mu_\text{t}}{\sigma_k} \right) \frac{\partial k}{\partial x_j} \right] + P_k - \rho\epsilon, \\
+	\frac{\partial(\rho \epsilon)}{\partial t} + \frac{\partial}{\partial x_j}\left(\rho V_j \epsilon \right) = \frac{\partial}{\partial x_j} \left[ \left(\mu+\frac{\mu_\text{t}}{\sigma_\epsilon} \right) \frac{\partial \epsilon}{\partial x_j} \right] + \frac{\epsilon}{k}(C_{\epsilon 1}P_k - C_{\epsilon 2}\rho\epsilon),
 	\end{gather}
 \end{subequations}
 \begin{eqexpl}
-	\item{\(P_k\)}[=]\(\mu_\text{t} \left( \frac{\partial U_i}{\partial x_j} + \frac{\partial U_j}{\partial x_i} \right)\frac{\partial U_i}{\partial x_j} - \frac{2}{3}\frac{\partial U_k}{\partial x_k}\left(3 \mu_\text{t} \frac{\partial U_k}{\partial x_k} + \rho k \right)\) "--- генерация турбулентности;
+	\item{\(P_k\)}[=]\(\mu_\text{t} \left( \frac{\partial V_i}{\partial x_j} + \frac{\partial V_j}{\partial x_i} \right)\frac{\partial V_i}{\partial x_j} - \frac{2}{3}\frac{\partial V_k}{\partial x_k}\left(3 \mu_\text{t} \frac{\partial V_k}{\partial x_k} + \rho k \right)\) "--- генерация турбулентности;
 	\item{\(C_\mu\)}[=]\(0,09\) "--- эмпирическая константа модели;
 	\item{\(C_{\varepsilon 1}\)}[=]\(1,44\) "--- коэффициент генерации \(\varepsilon\);
 	\item{\(C_{\varepsilon 2}\)}[=]\(1,92\) "--- коэффициент диссипации \(\varepsilon\);
@@ -141,8 +141,8 @@
 Модель \(k\) "--- \(\omega\) \autocite{Wilcox1988}, где \(\omega=\epsilon / k\), на практике лучше соответствует экспериментальным данным течений с отрывом пограничного слоя и небольшими рециркуляционными зонами.
 \begin{subequations}
 	\begin{gather}
-	\frac{\partial(\rho k)}{\partial t} + \frac{\partial}{\partial x_j}\left(\rho U_j k \right) = \frac{\partial}{\partial x_j} \left[ \left(\mu+\frac{\mu_\text{t}}{\sigma_k} \right) \frac{\partial k}{\partial x_j} \right] + p_k - \beta_1 \rho k\omega, \\
-	\frac{\partial(\rho \omega)}{\partial t} + \frac{\partial}{\partial x_j}\left(\rho U_j \omega \right) = \frac{\partial}{\partial x_j} \left[ \left(\mu+\frac{\mu_\text{t}}{\sigma_\omega} \right) \frac{\partial \omega}{\partial x_j} \right] + \alpha\frac{\omega}{k}p_k - \beta\rho\omega^2,
+	\frac{\partial(\rho k)}{\partial t} + \frac{\partial}{\partial x_j}\left(\rho U_j k \right) = \frac{\partial}{\partial x_j} \left[ \left(\mu+\frac{\mu_\text{t}}{\sigma_k} \right) \frac{\partial k}{\partial x_j} \right] + P_k - \beta_1 \rho k\omega, \\
+	\frac{\partial(\rho \omega)}{\partial t} + \frac{\partial}{\partial x_j}\left(\rho U_j \omega \right) = \frac{\partial}{\partial x_j} \left[ \left(\mu+\frac{\mu_\text{t}}{\sigma_\omega} \right) \frac{\partial \omega}{\partial x_j} \right] + \alpha\frac{\omega}{k}P_k - \beta\rho\omega^2,
 	\end{gather}
 \end{subequations}
 \begin{eqexpl}
@@ -297,7 +297,7 @@
 	\hline
 	0,3 & \textminus3,9 & 0,4 & \textminus3,0 & 1,3 & --- & --- \\
 	\hline
-	0,25 & \textminus3,2 & 0,57 & \textminus2,3 & 1,3 & 5,9 & 2,2 \\
+	0,25 & \textminus3,2 & 0,6 & \textminus2,3 & 1,3 & 5,9 & 2,2 \\
 	\hline
 	0,19 & \textminus3,0 & 0,7 & \textminus2,1 & 1,3 & 5,0 & 0,9 \\
 	\hline
@@ -311,10 +311,6 @@
 	}
 \end{table}
 
-
-
-
-
 Результаты всех расчётов показали удовлетворительное соответствие экспериментальным данным.
 На режимах максимума КПД расхождение для \(k\) "--- \(\omega\) не превысило 2,1\% по КПД и 1,4\% по коэффициенту теоретического напора, тогда как для SST достигало соответственно 5,0\% и 3,0\%.
 Согласование с экспериментом результатов расчётов по модели \(k\) "--- \(\epsilon\) заняло промежуточное положение.
@@ -322,7 +318,7 @@
 
 \section{Влияние меридионального ускорения потока на характеристики ступени}\label{sec:vlijanieMf}
 
-При изменении меридиональной формы проточной части рабочего колеса существенно изменяется его аэродинамическая характеристика (\S\ref{sec:ch1/mrdnl}).
+При изменении меридиональной формы проточной части рабочего колеса существенно изменяется его аэродинамическая характеристика (см.~\S~\ref{sec:ch1/mrdnl}).
 
 За решёткой профилей скорость потока \(c_{2}\) связана с окружной скоростью лопатки \(U\) и относительной скоростью \(w_{2}\).
 При достаточно густых решётках профилей (\(\tau > 1\)) направление относительной скорости за лопаточным венцом \(w_{2}\) слабо зависит от режима работы решётки (от \(\bar{c}_{1a}\) или \(\beta_1\)) (рисунок \ref{fig:trHt}).
